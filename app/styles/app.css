@@ -134,3 +134,28 @@ hr {
   font-size: .75rem;
   line-height:1.2;
 }
+
+.muuri-grid-component {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+.muuri-item-component {
+  display: block;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.item.muuri-item-dragging {
+  z-index: 3;
+}
+.item.muuri-item-releasing {
+  z-index: 2;
+}
+.item.muuri-item-hidden {
+  z-index: 0;
+}
+.item-content {
+  position: relative;
+}
