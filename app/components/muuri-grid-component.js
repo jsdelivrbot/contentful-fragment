@@ -3,7 +3,8 @@ import Muuri from 'muuri';
 
 export default Component.extend({
   classNames: ['muuri-grid-component'],
-  didRender() {
+
+  didInsertElement() {
     this.grid = new Muuri(this.element, {
       dragEnabled: true,
       dragSortInterval: 10
@@ -12,5 +13,9 @@ export default Component.extend({
       const newOrder = items.map(item => item.getElement().dataset.id);
       return this.get('updateSort')(newOrder);
     });
+  },
+
+  willRemoveElement() {
+    delete this.grid;
   }
 });
